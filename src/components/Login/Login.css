@@ -1,0 +1,18 @@
+#loginContainer{
+    margin-top: 20vh;
+    position: relative;
+}
+.goButton{
+    background-color: #364547;
+    border:1px #ffffff;
+
+    background: linear-gradient(to right, #1e9d81 50%, #364547 50%); /*1e9d81, 9b2226*/
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
+}
+
+.goButton:hover{
+    background-color: #ff7332;
+    background-position: left bottom;
+}

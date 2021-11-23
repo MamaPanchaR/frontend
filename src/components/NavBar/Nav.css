@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Praise&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.bg-myRed{
+    background-color: #364547;
+    /*993100, #501f00;, #3A3103;*/
+}
+
+.LogoName1{
+    /*font-family: 'Praise', cursive;*/
+    font-family: 'Lobster', cursive;
+    font-size: x-large;
+}
