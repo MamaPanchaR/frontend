@@ -1,9 +1,9 @@
 import React from "react";
 import './Nav.css';
-import { Navbar, Nav, Dropdown, DropdownButton } from 'react-bootstrap';
+import { Navbar, Nav, Dropdown, NavDropdown, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserCircle, faShoppingBag } from "@fortawesome/free-solid-svg-icons"
-
+import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 /*import logo from '../img/mamapanchaLogo.svg';
 import logo2 from '../img/mamapanchaLogo.jpg';*/
@@ -15,28 +15,37 @@ export default class NavBar extends React.Component {
     }
     render() {
         return (
-            <Navbar bg="myRed" variant="dark" fixed="top" expand="lg" collapseOnSelect>
+            <Navbar id="navbar" bg="myRed" variant="dark" fixed="top" expand="lg" collapseOnSelect>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Brand href="#" className="mx-2">
+                <Navbar.Brand as={Link} to="/" className="mx-2">
                     <span className="LogoName1">mama</span>
                     <span className="LogoName1">Pancha</span></Navbar.Brand>
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-auto">
-                        <Nav.Link href="#" className="text-link mx-2">Productos</Nav.Link>
-                        <Nav.Link href="#" className="text-link mx-2">Nosotros</Nav.Link>
-                        <Nav.Link href="#" className="text-link mx-2">Contáctanos</Nav.Link>
-                        <Nav.Link variant="dark" href="#" className="mx-2"><FontAwesomeIcon icon={faUserCircle} size="lg" /></Nav.Link>
-                        <Nav.Link variant="dark" href="#" className="mx-2"><FontAwesomeIcon icon={faShoppingBag} size="lg" /></Nav.Link>
+                    <Nav className="ms-auto me-5">
+                        <Nav.Link href="/" className="text-link mx-2">Productos</Nav.Link>
+                        <Nav.Link href="/" className="text-link mx-2">Nosotros</Nav.Link>
+                        <Nav.Link href="/contact" className="text-link mx-2">Contáctanos</Nav.Link>
 
-
-                        {/*<DropdownButton id="dropdown-basic-button" title="Dropdown button">
-                            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                        </DropdownButton>*/}
+                        <NavDropdown id="Dropdown.Header" title="Usuario" className=" text-link mx-2 text-center justify-content-center">
+                            <Dropdown.Header id="dropdownHeader" className="mx-1" >
+                                <Row className=" text-link mx-2 iconUser">
+                                    <Nav.Link href="/login" className=" text-link mx-2 "><FontAwesomeIcon icon={faUserCircle} size="2x" className="iconUser mx-auto" /></Nav.Link>
+                                </Row>
+                                <Row>
+                                    USUARIO
+                                </Row>
+                            </Dropdown.Header>
+                            <Dropdown.Divider />
+                            <NavDropdown.Item className="dropdownHead text-center">Cerrar Sesión</NavDropdown.Item>
+                        </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
         );
     }
 }
+
+/**
+ *
+ * <Nav.Link as={Link} to="/contact" className="text-link mx-2">Contáctanos</Nav.Link>
+ */

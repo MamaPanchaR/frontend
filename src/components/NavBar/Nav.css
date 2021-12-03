@@ -11,3 +11,21 @@
     font-family: 'Lobster', cursive;
     font-size: x-large;
 }
+
+#navbar #dropdownHeader .row:nth-child(1){
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+#navbar  #dropdownHeader .row:nth-child(2){
+    display: flex;
+    font-size: 1rem;
+    justify-content: center;
+}
+
+.iconUser{
+    color: #364547;
+    display: flex;
+    justify-content: center;
+}

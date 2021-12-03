@@ -16,3 +16,8 @@
     background-color: #ff7332;
     background-position: left bottom;
 }
+
+.carousel {
+    max-height: 600px;
+    overflow: hidden;
+}

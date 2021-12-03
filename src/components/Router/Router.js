@@ -1,30 +1,31 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "../Login/Login";
 import Contact from "../Contact/Contact";
 import CardProd from "../CardProd/CardProd";
 import NavBar from "../NavBar/NavBar";
 import ListProd from "../ListProd/ListProd";
+import CrudProd from '../crudProd';
+import Us from '../Us/Us';
+
+import PrivateRoute from "../Auth/PrivateRoute";
+
 
 export default function AppRouter() {
     return (
         <Router>
-            <NavBar />
-
             <Switch>
-                <Route exact path={["/", "/contact"]} component={Contact} />
-                <Route exact path={["/login"]} component={Login} />
                 <Route exact path={["/contact"]} component={Contact} />
-                <Route exact path={["/", "cardProductos"]} component={CardProd} />
-                <Route exact path={["/", "/productos"]} component={ListProd} />
+                <Route exact path={["/login"]} component={Login} />
+                <Route exact path={["/contacto"]} component={Contact} />
+                <Route exact path={["/us"]} component={Us} />
+                <Route exact path={["/"]} component={CardProd} />
                 {/*<Route exact path={["*"]} component={Error}/>*/}
+
+                <Route exact path="/crudProd" component={CrudProd} />
+
 
             </Switch>
         </Router>
     )
-}
-
-
-function Home() {
-    return <h2>Home</h2>;
 }
