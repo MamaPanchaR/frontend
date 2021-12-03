@@ -17,13 +17,13 @@ export default class NavBar extends React.Component {
         return (
             <Navbar id="navbar" bg="myRed" variant="dark" fixed="top" expand="lg" collapseOnSelect>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Brand as={Link} to="/" className="mx-2">
+                <Navbar.Brand href="/" className="mx-2">
                     <span className="LogoName1">mama</span>
                     <span className="LogoName1">Pancha</span></Navbar.Brand>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto me-5">
                         <Nav.Link href="/" className="text-link mx-2">Productos</Nav.Link>
-                        <Nav.Link href="/" className="text-link mx-2">Nosotros</Nav.Link>
+                        <Nav.Link href="/us" className="text-link mx-2">Nosotros</Nav.Link>
                         <Nav.Link href="/contact" className="text-link mx-2">Contáctanos</Nav.Link>
 
                         <NavDropdown id="Dropdown.Header" title="Usuario" className=" text-link mx-2 text-center justify-content-center">

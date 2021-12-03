@@ -43,7 +43,11 @@ export default class CardProd extends React.Component {
                 <Row className="mainContent mt-5">
                     <Col sm={4}>
                         <Card className="">
-                            <Card.Img variant="top" src="holder.js/100px180" />
+                        <img
+                                className="d-block w-100"
+                                src="./img/descarga.png"
+                                alt="First slide"
+                            />
                         </Card>
                     </Col>
                     <Col sm={8}>
@@ -70,14 +74,22 @@ export default class CardProd extends React.Component {
                     </Col>
                     <Col sm={4}>
                         <Card className="">
-                            <Card.Img variant="top" src="holder.js/100px180" />
+                        <img
+                                className="d-block w-100"
+                                src="./img/descarga.jpg"
+                                alt="First slide"
+                            />
                         </Card>
                     </Col>
                 </Row>
                 <Row className="mainContent mt-5">
                     <Col sm={4}>
                         <Card className="">
-                            <Card.Img variant="top" src="holder.js/100px180" />
+                        <img
+                                className="d-block w-100"
+                                src="./img/alfajores.jpg"
+                                alt="First slide"
+                            />
                         </Card>
                     </Col>
                     <Col sm={8}>
@@ -88,23 +100,6 @@ export default class CardProd extends React.Component {
                                     Describir producto
                                 </Card.Text>
                             </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
-                <Row className="mainContent mt-3">
-                    <Col sm={8}>
-                        <Card className="">
-                            <Card.Body>
-                                <Card.Title>Postres</Card.Title>
-                                <Card.Text>
-                                    Describir producto
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col sm={4}>
-                        <Card className="">
-                            <Card.Img variant="top" src="holder.js/100px180" />
                         </Card>
                     </Col>
                 </Row>

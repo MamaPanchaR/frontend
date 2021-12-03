@@ -17,14 +17,11 @@ export default function AppRouter() {
             <Switch>
                 <Route exact path={["/contact"]} component={Contact} />
                 <Route exact path={["/login"]} component={Login} />
+                <PrivateRoute exact path="/crudProd" component={CrudProd} />
                 <Route exact path={["/contacto"]} component={Contact} />
                 <Route exact path={["/us"]} component={Us} />
                 <Route exact path={["/"]} component={CardProd} />
                 {/*<Route exact path={["*"]} component={Error}/>*/}
-
-                <Route exact path="/crudProd" component={CrudProd} />
-
-
             </Switch>
         </Router>
     )

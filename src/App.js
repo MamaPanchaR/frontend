@@ -10,12 +10,11 @@ import CrudProd from './components/crudProd/index'
 
 
 import AppRouter from './components/Router/Router';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+//import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
 function App() {
   return (
-    <Router>
       <div className="App">
         <div className="nav">
           <NavBar />
@@ -27,7 +26,6 @@ function App() {
           <Footer />
         </div>
       </div>
-    </Router>
   );
 }
 
