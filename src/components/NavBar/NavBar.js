@@ -1,51 +1,81 @@
 import React from "react";
-import './Nav.css';
-import { Navbar, Nav, Dropdown, NavDropdown, Row } from 'react-bootstrap';
+import {
+  Container,
+  Nav,
+  Navbar,
+  DropdownButton,
+  Dropdown,
+  Row,
+  Col,
+} from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import "./navbar.css";
+import Cookies from "universal-cookie/es6";
 
-/*import logo from '../img/mamapanchaLogo.svg';
-import logo2 from '../img/mamapanchaLogo.jpg';*/
+const cookies = new Cookies();
 
-export default class NavBar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
-    render() {
-        return (
-            <Navbar id="navbar" bg="myRed" variant="dark" fixed="top" expand="lg" collapseOnSelect>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Brand href="/" className="mx-2">
-                    <span className="LogoName1">mama</span>
-                    <span className="LogoName1">Pancha</span></Navbar.Brand>
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-auto me-5">
-                        <Nav.Link href="/" className="text-link mx-2">Productos</Nav.Link>
-                        <Nav.Link href="/us" className="text-link mx-2">Nosotros</Nav.Link>
-                        <Nav.Link href="/contact" className="text-link mx-2">Contáctanos</Nav.Link>
+export default class Menu extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-                        <NavDropdown id="Dropdown.Header" title="Usuario" className=" text-link mx-2 text-center justify-content-center">
-                            <Dropdown.Header id="dropdownHeader" className="mx-1" >
-                                <Row className=" text-link mx-2 iconUser">
-                                    <Nav.Link href="/login" className=" text-link mx-2 "><FontAwesomeIcon icon={faUserCircle} size="2x" className="iconUser mx-auto" /></Nav.Link>
-                                </Row>
-                                <Row>
-                                    USUARIO
-                                </Row>
-                            </Dropdown.Header>
-                            <Dropdown.Divider />
-                            <NavDropdown.Item className="dropdownHead text-center">Cerrar Sesión</NavDropdown.Item>
-                        </NavDropdown>
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
-        );
-    }
+  logout() {
+    cookies.remove("_s");
+    window.location.reload();
+  }
+
+  render() {
+    return (
+      <Navbar fixed="top" id="navbar" bg="primary" variant="dark">
+        <Container>
+          {/* Logo
+            <img
+              id="navbar-img"
+              src={
+                'https://www.misiontic2022.gov.co/746/channels-642_misiontic_logo.png'
+              }
+            />
+              */}
+          <Navbar.Brand href="/" id="navbar-in">
+            Mama
+            <span id="navbar-sub-brand">Pancha</span>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto me-5">
+              <Nav.Link href="/" className="text-link mx-2">
+                Productos
+              </Nav.Link>
+              <Nav.Link href="/Us" className="text-link mx-2">
+                Nosotros
+              </Nav.Link>
+              <Nav.Link href="/contact" className="text-link mx-2">
+                Contáctanos
+              </Nav.Link>
+            </Nav>
+
+            <DropdownButton title="Usuario">
+              <Dropdown.Header id="dropdown-header">
+                <Row>
+                  <FontAwesomeIcon icon={faUserCircle} />
+                </Row>
+                <Row>#USUARIO#</Row>
+              </Dropdown.Header>
+              
+              <Dropdown.Item href="/login">Iniciar Sesion</Dropdown.Item>
+              <Dropdown.Item href="/crudSimple">Crud</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item onClick={() => this.logout()}>
+                Cerrar sesión
+              </Dropdown.Item>
+              {/* <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>*/}
+            </DropdownButton>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    );
+  }
 }
-
-/**
- *
- * <Nav.Link as={Link} to="/contact" className="text-link mx-2">Contáctanos</Nav.Link>
- */
